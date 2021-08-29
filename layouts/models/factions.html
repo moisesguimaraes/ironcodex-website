@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+{{ range .Sections }}
+	<h4><a href="{{ .Permalink }}">{{ .Params.title }}</a></h4>
+	{{ range .Pages }}
+		<p><a href="{{ .Permalink }}">{{ .Params.title }}</a></p>
+	{{ end }}
+{{ end }}
+
+{{ .Content }}
+
+{{ range .Params.cards }}
+	<img src="https://scans.ironcodex.net/{{ . }}"/>
+{{ end }}
+
+<footer class="footline">
+	{{with .Params.LastModifierDisplayName}}
+	    <i class='fas fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a> {{with $.Date}} <i class='fas fa-calendar'></i> {{ .Format "02/01/2006" }}{{end}}
+	    </div>
+	{{end}}
+</footer>
+
+{{ partial "footer.html" . }}
