@@ -1,0 +1,17 @@
+---
+baseURL: "https://ironcodex.net/"
+languageCode: "en-us"
+title: "Iron Codex"
+theme: "learn"
+
+params:
+  disableLandingPageButton: true
+  disableMermaid: true
+  disableNextPrev: true
+  themeVariant: "ironcodex"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
